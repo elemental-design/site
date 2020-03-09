@@ -1,2 +1,2 @@
 # site
-Elemental Design System site
+Elemental Design System site.
