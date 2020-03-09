@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Macintosh Helper <github@macintoshhelper.com>",
   "dependencies": {
-    "elemental-react": "0.0.1",
+    "elemental-react": "^0.1.0",
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.39",
     "gatsby-plugin-manifest": "^2.2.39",
