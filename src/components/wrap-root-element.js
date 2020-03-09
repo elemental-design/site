@@ -5,19 +5,20 @@ import { ThemeProvider, LayoutProvider } from 'elemental-react';
 const fontSizes = [96, 60, 48, 34, 24, 20, 16, 14];
 const [h1, h2, h3, h4, h5, h6] = fontSizes;
 
-const roundTo = function (target, num) {
+const roundTo = function(target, num) {
   var resto = target % num;
-  if (resto <= (num / 2)) {
+  if (resto <= num / 2) {
     return target - resto;
   } else {
     return target + num - resto;
   }
-}
+};
 
-const lineHeights = [h1, h2, h3, h4, h5, h6].map(n => roundTo(Math.abs(n * 1.15), 4));
+const lineHeights = [h1, h2, h3, h4, h5, h6].map(n =>
+  roundTo(Math.abs(n * 1.15), 4),
+);
 
 fontSizes.h1 = h1;
-
 
 const getWidth = () => {
   if (typeof window === 'undefined') {
@@ -37,7 +38,7 @@ const getWidth = () => {
   }
 };
 
-const getBreakpoint = (width) => {
+const getBreakpoint = width => {
   switch (width) {
     case width <= 360: {
       return 0;
@@ -49,23 +50,23 @@ const getBreakpoint = (width) => {
       return 2;
     }
   }
-}
+};
 
 export default ({ element }) => {
   const breakpoint = getBreakpoint(getWidth());
 
   return (
-    <ThemeProvider theme={{
-      fontSizes,
-      lineHeights,
-      fontFamily: {
-        primary: 'Helvetica',
-        secondary: 'Helvetica'
-      }
-    }}>
-      <LayoutProvider breakpoint={breakpoint}>
-        {element}
-      </LayoutProvider>
+    <ThemeProvider
+      theme={{
+        fontSizes,
+        lineHeights,
+        fontFamily: {
+          primary: 'Helvetica',
+          secondary: 'Helvetica',
+        },
+      }}
+    >
+      <LayoutProvider breakpoint={breakpoint}>{element}</LayoutProvider>
     </ThemeProvider>
-  )
-}
+  );
+};

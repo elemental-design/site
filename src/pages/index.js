@@ -6,12 +6,7 @@ import { Button, Box, Text } from 'elemental-react';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-const Link = ({ children, to }) => (
-  <a href={to}>
-    {children}
-  </a>
-);
-
+const Link = ({ children, to }) => <a href={to}>{children}</a>;
 
 // const Footer = () => (
 //   <Box bg="black">
@@ -22,9 +17,24 @@ const Link = ({ children, to }) => (
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Box height="100vh" width="100vw" bg="white" flexDirection="column" alignItems="center" justifyContent="space-between" p={40}>
+    <Box
+      height="100vh"
+      width="100vw"
+      bg="white"
+      flexDirection="column"
+      alignItems="center"
+      justifyContent="space-between"
+      p={40}
+    >
       <Box />
-      <Text mb={0} fontSize={[2, 2, 0]} lineHeight={[2, 2, 0]} fontFamily="Helvetica" color="black" center>
+      <Text
+        mb={0}
+        fontSize={[2, 2, 0]}
+        lineHeight={[2, 2, 0]}
+        fontFamily="Helvetica"
+        color="black"
+        center
+      >
         Elemental Design System
       </Text>
       <Link to="https://github.com/elemental-design">

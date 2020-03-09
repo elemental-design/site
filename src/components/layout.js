@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <>
@@ -36,7 +36,7 @@ const Layout = ({ children }) => {
         </footer>
       </div> */}
     </>
-  )
+  );
 };
 
 Layout.propTypes = {
